@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define EXERCICE_4
+#define EXERCICE_3
 
 int main()
 {
@@ -219,6 +219,41 @@ int main()
         printf(" Le Min de %d, %d, et %d est %d \n", A, B, C, minABC);
 
     #endif // EXERCICE_4
+
+    #ifdef EXERCICE_3
+    /*
+    Exercice 3 : Structure conditionnelle if..else
+    Une garde d'enfants offre un service aux parents qui sortent le soir, sachant que:
+        - Une heure entre 18h et 21h coûte 1.5 dinar.
+        - Une heure entre 21h et minuit coûte 4.5 dinar.
+    On désire connaître le montant que doit payer les parents qui ont laissé leur(s) enfant(s) dans cette garde de l'heure h1 à l'heure h2.
+    N.B: h1 et h2 sont données par l’utilisateur.
+    */
+
+    int h1, h2;
+    float montant_total;
+
+    printf("Donnez la valeur de h1 entre 18 et 24 (miniut) : ");
+    scanf("%d",&h1);
+    printf("Donnez la valeur de h2 entre 18 et 24 (miniut) : ");
+    scanf("%d",&h2);
+
+    if(h1<h2 && h1>=18 && h2<=24){
+            if(h2<=21){ // h1>=18 et h2 <= 21
+                montant_total = (h2-h1) * 1.5;
+            }else if(h1>=21){ // h1>=21 et h2<=24
+                montant_total = (h2-h1) * 4.5;
+            }else{ // h1 < 21  et h2 >21
+
+                montant_total = (21-h1)*1.5 + (h2-21)*4.5;
+            }
+
+            printf("Le montant à payer est : %.3f \n",montant_total);
+    }
+    else
+        printf("Les heures saisies ne sont pas valides\n");
+
+    #endif // EXERCICE_3
 
 
     return 0;
