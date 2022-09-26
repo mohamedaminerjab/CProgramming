@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define EXERCICE_5
+#define EXERCICE_4
 
 int main()
 {
@@ -176,10 +176,49 @@ int main()
     #endif // EXERCICE_5
 
 
-    #ifdef EXERCICE_1
+    #ifdef EXERCICE_4
 
+    /*
+    Exercice 4 : Structure conditionnelle if imbriqué
+    Écrire un programme qui calcule le min de trois entiers saisis au clavier.
 
-    #endif // EXERCICE_1
+    */
+
+    int A, B, C, minABC;
+
+    printf("Donnez la valeur de A : ");
+    scanf("%d",&A);
+    printf("Donnez la valeur de B : ");
+    scanf("%d",&B);
+    printf("Donnez la valeur de C : ");
+    scanf("%d",&C);
+
+    // 1ere méthode: if imbriqué
+
+    if(A<B){
+        if(A<C){
+            minABC =A;
+        }else{
+            minABC =C;
+        }
+    }
+    else{
+        if(B<C){
+            minABC =B;
+        }else{
+            minABC =C;
+        }
+    }
+        printf(" Le Min de %d, %d, et %d est %d \n", A, B, C, minABC);
+
+    // 2eme méthode : short hand
+    // https://www.w3schools.com/c/c_conditions_short_hand.php
+
+        minABC = A < B ? ( A < C ? A : C):( B < C ? B : C);
+
+        printf(" Le Min de %d, %d, et %d est %d \n", A, B, C, minABC);
+
+    #endif // EXERCICE_4
 
 
     return 0;
