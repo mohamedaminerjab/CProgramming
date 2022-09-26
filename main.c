@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define EXERCICE_3
+#define EXERCICE_1
 
 int main()
 {
@@ -255,6 +255,79 @@ int main()
 
     #endif // EXERCICE_3
 
+    #ifdef EXERCICE_2
+    /*
+    Exercice 2 : Structure conditionnelle if..else
 
+    Écrire un programme qui calcule le montant qu’un client doit payer à la caisse d’une boutique
+    après l’attribution d’un solde en utilisant la structure "if .. else".
+        • Si le total à payer est inférieur ou égal à 20dt aucune remise ne sera attribuée.
+        • Si le total est entre 20dt et 100dt il y aura une remise de 5%
+        • Si le total est entre 100dt et 200dt il y aura une remise de 10%
+        • Si le total est supérieur à 200dt il y aura une remise de 15% .
+    */
+
+    float total_avant_remise, total_apres_remise;
+
+    printf("Donnez le montant total des achats : ");
+    scanf("%f",&total_avant_remise);
+
+    if(total_avant_remise<=20){
+        total_apres_remise=total_avant_remise;
+    }else if(total_avant_remise<=100){
+        total_apres_remise=total_avant_remise-(total_avant_remise*5/100);
+    }
+    else if(total_avant_remise<=200){
+        total_apres_remise=total_avant_remise-(total_avant_remise*10/100);
+    }
+    else {
+        total_apres_remise=total_avant_remise-(total_avant_remise*15/100);
+    }
+
+    printf("Le montant total des achats apres remise est %.3f : ",total_apres_remise);
+
+    #endif // EXERCICE_2
+
+    #ifdef EXERCICE_1
+
+    /*
+    Exercice 1 : Structure conditionnelle if..else
+    Écrire un programme C qui demande à l’utilisateur d'entrer la moyenne d'un élève.
+    Leprogramme permet d'afficher la mention obtenue.
+
+    Moyenne en dessous de 10 : redouble
+    Moyenne entre 10 (inclus) et 12 : passable
+    Moyenne entre 12 (inclus) et 14 : Assez Bien
+    Moyenne entre 14 (inclus) et 16 : Bien
+    Moyenne supérieure à 16 : Très Bien
+
+    */
+
+    float moyenne;
+
+    printf("Donnez la moyenne : ");
+    scanf("%f",&moyenne);
+
+    if(moyenne>=0 && moyenne<=20){
+        if(moyenne<10){
+        printf("Redouble");
+    }else if(moyenne<12){
+        printf("Passable");
+    }
+    else if(moyenne<14){
+        printf("Assez Bien");
+    }
+    else if(moyenne<16){
+        printf("Bien");
+    }else
+    {
+        printf("Très Bien");
+    }
+    }else{
+    printf("La moyenne saisie est invalide");
+    }
+
+
+    #endif // EXERCICE_1
     return 0;
 }
