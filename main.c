@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define EXERCICE_7
+#define EXERCICE_5
 
 int main()
 {
@@ -133,10 +133,47 @@ int main()
 
 
 
-    #ifdef EXERCICE_2
+    #ifdef EXERCICE_5
+    /*
+    Exercice 5
 
+    Écrire un programme qui saisit un entier entre 100 et 999 puis faire:
+    - le carré de la somme de ses entiers si la somme est paire
+    - la racine carrée de la somme si la somme est impaire.
 
-    #endif // EXERCICE_2
+    Exemple:
+    123 --> 1+2+3 = 6 paire --> on fait le carré : 6² = 36
+    333 --> 3+3+3 = 9 impaire --> on fait la racine carrée : racine de 9 = 3
+
+    */
+    #include "math.h" // pour inclure les fonctions mathematiques comme sqrt:
+
+    int A;
+    printf("Donnez la valeur de A entre 100 et 999 : ");
+    scanf("%d",&A);
+
+    if(A>=100 && A<=999){
+
+        int somme;
+        int unites, dizaines, centaines;
+
+        unites = A%10;
+        dizaines = (A%100)/10;
+        centaines = A/100;
+
+        somme = centaines + dizaines + unites;
+
+        if(somme % 2 ==0 )// somme est paire
+        {
+            printf("Le carre de %d est %d", somme, somme*somme);
+        }else{
+            printf("Le racine carre de %d est %.3f", somme, sqrt(somme));
+        }
+    }
+    else {
+        printf("La valeur saisie n'est pas comprise entre 100 et 999 \n");
+    }
+    #endif // EXERCICE_5
 
 
     #ifdef EXERCICE_1
