@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define EXERCICE_2
+#define EXERCICE_7
+
 
 
 
