@@ -11,12 +11,12 @@ int main()
 
     #ifdef EXERCICE_7
 
-    int jour, mois, annee;
+    int jour, month, annee;
 
     printf(" Donnez le jour : ");
     scanf(" %d",&jour);
     printf(" Donnez le mois : ");
-    scanf(" %d",&mois);
+    scanf(" %d",&month);
     printf(" Donnez l'annee : ");
     scanf(" %d",&annee);
 
@@ -40,7 +40,7 @@ int main()
 
     int nb_jours_restants;
 
-    switch (mois){
+    switch (month){
 
         case 1  :   printf("%d Janvier %d\n",jour,annee);
                     nb_jours_restants = 31-jour;
